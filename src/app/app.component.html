@@ -1,0 +1,40 @@
+<app-navbar></app-navbar>
+<router-outlet></router-outlet>
+
+<!-- <div class="container" >
+  <div class="row">
+    <div class="col-md-4" style="margin-top: 10rem;">
+        <label>What is your name?</label>
+        <input type="text" id="name" [(ngModel)]="name" class="form-control" />
+
+        <div class="alert alert-info" *ngIf="name" style="margin-top: 10px;">
+          Your name is : {{name}}
+        </div>
+    </div>
+
+    <div class="col-md-4" style="margin-top: 10rem;">
+        <label>What is your name?</label>
+        <input id="isim" type="text" [formControl]="isim" class="form-control">
+
+        <div class="alert alert-info" style="margin-top: 10px;">
+          Value: {{ isim.value }}
+        </div>
+        <button (click)="updateName()" class="btn btn-outline-dark">Update Name</button>
+    </div>
+
+     <div class="col-md-4" style="margin-top: 10rem;">
+      <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+
+        <label for="first-name">First Name: </label>
+        <input id="first-name" type="text" formControlName="firstName" class="form-control">
+
+        <label for="last-name">Last Name: </label>
+        <input id="last-name" type="text" formControlName="lastName" class="form-control">
+
+        <p>Complete the form to enable button.</p>
+        <button type="submit" [disabled]="!profileForm.valid" class="btn btn-outline-dark">Submit</button>
+
+      </form>
+    </div>
+  </div>
+</div> -->

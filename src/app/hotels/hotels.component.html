@@ -1,0 +1,76 @@
+<div class="container">
+  <div class="row" style="margin-top: 1rem;">
+    <div class="col-md-8">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <!-- <th>Hotel ID</th> -->
+            <th>Hotel Name</th>
+            <th>Hotel City</th>
+            <th>Hotel Disctrict</th>
+            <th></th>
+            <!-- <th>Hotel Description</th> -->
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let item of hotelService.list">
+            <!-- <td> {{item.hotelId}} </td> -->
+            <td> {{item.hotelName}} </td>
+            <td> {{item.hotelCity}} </td>
+            <td> {{item.hotelDistrict}} </td>
+            <!-- <td> {{item.hotelDescription}} </td> -->
+            <td>
+              <button type="button" class="btn btn-outline-primary" (click)="formuDoldur(item)"
+                (click)="toggleCollapse()" style="margin-right: 5px;" [routerLink]="['/hoteledit']"
+                routerLinkActive="router-link-active">Düzenle</button>
+              <button type="button" class="btn btn-outline-danger" (click)="openModal(template)">Sil</button>
+              <ng-template #template>
+                <div class="modal-body text-center">
+                  <p>Silmek istediğinize emin misiniz?</p>
+                  <button type="button" class="btn btn-default" (click)="confirm(item.hotelId)">Evet</button>
+                  <button type="button" class="btn btn-primary" (click)="decline()">Hayır</button>
+                </div>
+              </ng-template>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="col-md-4">
+      <div style="text-align: center; margin-top: 2rem;">
+        <h1>Add Hotel</h1>
+      </div>
+      <app-hotel-form></app-hotel-form>
+      <!-- <hr class="my-3">
+      <div *ngIf="isCollapsed == false">
+        <app-hotel-details></app-hotel-details>
+        <button (click)="toggleCollapse2()" class="btn btn-outline-danger" style="margin-top: 5px;">Formu Kapat</button>
+      </div> -->
+    </div>
+  </div>
+</div>
+
+
+<!-- <table>
+  <caption>Statement Summary</caption>
+  <thead>
+    <tr>
+      <th scope="col">Hotel ID</th>
+      <th scope="col">Hotel Name</th>
+      <th scope="col">Hotel City</th>
+      <th scope="col">Hotel Disctrict</th>
+      <th scope="col">Hotel Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of hotelService.list">
+      <td> {{item.hotelId}} </td>
+      <td> {{item.hotelName}} </td>
+      <td> {{item.hotelCity}} </td>
+      <td> {{item.hotelDistrict}} </td>
+      <td> {{item.hotelDescription}} </td>
+    </tr>
+  </tbody>
+</table> -->

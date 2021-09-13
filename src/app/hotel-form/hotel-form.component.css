@@ -1,0 +1,20 @@
+  /*for invalid form controls
+  input.invalid, select.invalid {
+     border-color: red;
+  }*/
+
+select:invalid{
+    color: gray;
+}
+.ng-valid[required], .ng-valid.required  {
+  border-left: 5px solid #42A948; /* green */
+}
+
+.ng-invalid:not(form)  {
+  border-left: 5px solid #a94442; /* red */
+}
+
+.alert{
+  padding: 0.6rem 1rem;
+  margin-bottom: 0.5rem;
+}

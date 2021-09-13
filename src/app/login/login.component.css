@@ -1,0 +1,116 @@
+.form-control.ng-touched.ng-invalid{
+  border-left: 5px solid #a94442;
+}
+
+.form-control.ng-dirty.ng-valid{
+  border-left: 5px solid rgb(5, 212, 67);
+}
+input.inputName,input.inputName:focus, input.inputPassword,input.inputPassword:focus{
+  background-color: white;
+  color: #1e272e;
+  border: 1px solid #dde1e7;
+}
+
+input.inputName:focus, input.inpuinputPasswordtName:focus{
+  box-shadow: none;
+}
+
+div.loginFormGroup label:not(.text-danger){
+  color: #dde1e7;
+  font-weight: 500;
+}
+
+div.loginFormGroup.required>label:first-child:after{
+  content:'*';
+  color: #dde1e7;
+  padding-left: 5px;
+}
+
+#toast-container > div {
+  opacity:1;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  padding: 30px;
+  margin-top: 7rem;
+}
+
+
+.wrapped-div {
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
+  background: #d2dae2;
+  padding: 30px;
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+  padding: 0px;
+  -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+  box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+}
+
+
+/* Tabs */
+.tab-header{
+  text-align: center;
+}
+
+.tab-header h2.active {
+  color: #1e272e;
+  border-bottom: 4px solid #1e272e;
+}
+
+.tab-header h2 {
+  text-align: center;
+  font-size: 19px;
+  font-weight: 600;
+  display:inline-block;
+  padding: 30px 40px 10px 40px;
+  cursor: pointer;
+  color: #ecedef;
+  border-bottom: 4px solid #ecedef;
+}
+
+.tab-header h2:focus {
+    outline: none;
+}
+
+form{
+    margin: 0px 16px;
+}
+
+div.form-group input.invalid{
+  border: 1px solid #dc3545;
+}
+
+div.form-group label:first-child
+{
+  text-transform: none;
+  font-size: 1rem;
+}
+
+.form-group{
+  margin-bottom: 15px;
+}
+
+.buttonUp {
+  color: #1e272e !important;
+  background-color: #d2dae2 !important;
+  border-color: #1e272e !important;
+}
+
+.buttonUp:hover {
+  color: #ecedef !important;
+  background-color: #1e272e !important;
+  border-color: #1e272e !important;
+}
+
+body
+{
+  background-color: black !important;
+}

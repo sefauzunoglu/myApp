@@ -1,0 +1,36 @@
+<div class="wrapper">
+  <div class="wrapped-div">
+    <div class="tab-header">
+      <h2 [routerLink]="['/login']" routerLinkActive="active">Sign In</h2>
+      <h2 [routerLink]="['/register']" routerLinkActive="active">Sign Up</h2>
+    </div>
+    <div class="row">
+      <div class="col-md-10 offset-md-1">
+        <form #form="ngForm" (ngSubmit)="register()" class="mb-4">
+          <div class="form-group required">
+            <input class="form-control" placeholder="Full Name" [(ngModel)]="model.name" name="name" type="text" required>
+          </div>
+          <div class="form-group required">
+            <input class="form-control" placeholder="Username" [(ngModel)]="model.username" name="username" type="text"
+              required>
+          </div>
+          <div class="form-group required">
+            <input class="form-control" placeholder="Email" [(ngModel)]="model.email" name="email" type="text" required>
+          </div>
+          <div>
+            <div class="form-group required">
+              <input type="password" class="form-control" placeholder="Password" [(ngModel)]="model.password" name="password"
+                required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-8">
+              <button [disabled]="form.invalid" type="submit" class="btn btn-block btn-success buttonUp">Sign Up</button>
+            </div>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>

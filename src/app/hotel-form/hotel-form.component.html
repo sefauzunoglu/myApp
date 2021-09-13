@@ -1,0 +1,59 @@
+<form novalidate autocomplete="off" #myForm="ngForm" (submit)="onSubmit(myForm)">
+  <input type="hidden" name="hotelId" [value]="hotelService.formDataHotel2.hotelId">
+
+  <div class="form-group">
+    <label></label>
+    <input type="text" placeholder="Hotel Name" class="form-control" name="hotelName" #hotelName="ngModel"
+      [(ngModel)]="hotelService.formDataHotel2.hotelName" required
+      [class.invalid]="hotelName.invalid && hotelName.touched">
+    <div [hidden]="hotelName.valid || hotelName.pristine" class="alert alert-danger">
+      Bu alan boş bırakılamaz
+    </div>
+  </div>
+  <div class="form-group">
+    <label></label>
+    <!-- <select class="form-control" name="cityName" #cityName="ngModel" [(ngModel)]="hotelService.formDataHotel2.hotelCity"  (ngModelChange)='onOptionsSelected($event)' required [class.invalid]="cityName.invalid && cityName.touched"> -->
+
+    <select class="form-control" name="cityName" #cityName="ngModel" [(ngModel)]="hotelService.formDataHotel2.hotelCity"
+      (change)='onOptionsSelected(cityName.value)' required [class.invalid]="cityName.invalid && cityName.touched">
+      <option value="" disabled selected hidden>Hotel City</option>
+      <option *ngFor="let item of areaService.listCity" value={{item.cityName}}>{{item.cityName}}</option>
+    </select>
+  </div>
+
+  <!--
+  <div class="form-group">
+    <label></label>
+    <input type="text" placeholder="Hotel District" class="form-control" name="hotelDistrict" #hotelDistrict="ngModel"
+      [(ngModel)]="hotelService.formDataHotel2.hotelDistrict" required
+      [class.invalid]="hotelDistrict.invalid && hotelDistrict.touched">
+    <div [hidden]="hotelDistrict.valid || hotelDistrict.pristine" class="alert alert-danger">
+      Bu alan boş bırakılamaz
+    </div>
+  </div>  -->
+
+
+  <!-- *ngIf="responseDisricts.length>0"-->
+
+  <div class="form-group">
+    <label></label>
+    <select class="form-control" name="districtName" #districtName="ngModel"
+      [(ngModel)]="hotelService.formDataHotel2.hotelDistrict" required
+      [class.invalid]="districtName.invalid && districtName.touched">
+      <option value="" disabled selected hidden>Hotel District</option>
+      <option *ngFor="let item of responseDisricts" value={{item.districtName}}>{{item.districtName}}</option>
+    </select>
+  </div>
+
+  <!-- <div class="form-group">
+    <label></label>
+    <textarea class="form-control" rows="3" placeholder="Hotel Description" #hotelDescription="ngModel"
+      [(ngModel)]="hotelService.formDataHotel.hotelDescription" required
+      [class.invalid]="hotelDescription.invalid && hotelDescription.touched"></textarea>
+  </div> -->
+
+  <div style="margin-top: 20px; display: flex;justify-content: space-between;" class="form-group">
+    <button class="btn btn-outline-secondary" type="submit" [disabled]="myForm.invalid">Kaydet</button>
+    <button class="btn btn-outline-primary" type="button" (click)="resetForm(myForm)">Temizle</button>
+  </div>
+</form>
